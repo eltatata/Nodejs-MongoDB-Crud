@@ -1,0 +1,21 @@
+{{#if task}}
+    <div class="container my-5">
+        <form action="/edit/{{task._id}}" method="post">
+            <input name="title" value="{{task.title}}" class="form-control form-control-lg my-3" type="text" placeholder="Name"
+                aria-label=".form-control-lg example">
+            <textarea name="description"  placeholder="description" class="form-control" id="exampleFormControlTextarea1"
+                rows="3">{{task.description}}</textarea>
+            <button type="submit" class="btn btn-success my-2">Update</button>
+        </form>
+    </div>
+{{else}}
+    <div class="container my-5">
+        <form action="/create" method="post">
+            <input name="title" class="form-control form-control-lg my-3" type="text" placeholder="Name"
+                aria-label=".form-control-lg example">
+            <textarea name="description" placeholder="description" class="form-control" id="exampleFormControlTextarea1"
+                rows="3"></textarea>
+            <button type="submit" class="btn btn-success my-2">Add</button>
+        </form>
+    </div>
+{{/if}}

@@ -1,0 +1,20 @@
+<ol class="list-group list-group-numbered my-5">
+    {{#each tasks }}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{title}}</div>
+                <p>{{description}}</p>
+            </div>
+
+            {{#if done}}
+                <a href="/done/{{_id}}" class="btn btn-warning mx-1">Undone</a>
+            {{else}}
+                <a href="/done/{{_id}}" class="btn btn-success mx-1">Done</a>
+            {{/if}}
+            <a href="/edit/{{_id}}" class="btn btn-primary mx-1">Edit</a>
+            <a href="/delete/{{_id}}" class="btn btn-danger mx-1">Delete</a>
+        </li>
+    {{else}}
+        <h1>No Tasks</h1>
+    {{/each}}
+</ol>

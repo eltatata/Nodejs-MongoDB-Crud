@@ -5,6 +5,8 @@
         {{> Form}}
     </div>
     <div class="col-lg-7">
-        {{> Task}}
+        {{#if !task}}
+            {{> Task}}
+        {{/if}}
     </div>
 </div>
